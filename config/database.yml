@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  database: unbackle_development
+  username: unbackle_app
+  password: <%= ENV["UNBACKLE_DB_PASSWORD"] %>
+  admin_username: postgres
+  admin_password: <%= ENV["UNBACKLE_DB_ADMIN_PASSWORD"] %>
+
+test:
+  adapter: mysql2
+  host: 127.0.0.1
+  port: 3306
+  database: unbackle_test
+  username: unbackle_app
+  password: <%= ENV["UNBACKLE_DB_PASSWORD"] %>
+  admin_username: root
+  admin_password: <%= ENV["UNBACKLE_DB_ADMIN_PASSWORD"] %>
+
+production:
+  adapter: postgresql
+  host: <%= ENV["DB_HOST"] %>
+  port: 5432
+  database: unbackle_production
+  username: unbackle_app
+  password: <%= ENV["UNBACKLE_DB_PASSWORD"] %>
+  admin_username: postgres
+  admin_password: <%= ENV["UNBACKLE_DB_ADMIN_PASSWORD"] %>
